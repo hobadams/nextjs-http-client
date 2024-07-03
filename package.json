@@ -1,14 +1,21 @@
 {
   "name": "@hobadams/nextjs-http-client",
+  "author": {
+    "name": "Hob Adams",
+    "url": "https://hobadams.com"
+  },
   "license": "MIT",
   "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.mjs",
   "coverageDirectory": "coverage",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --minify",
-    "release": "pnpm changeset version && pnpm changeset publish",
+    "release": "pnpm changeset version && pnpm changeset publish --access public",
     "lint": "tsc",
     "test": "jest"
   },
