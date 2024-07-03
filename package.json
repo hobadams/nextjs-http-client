@@ -7,7 +7,7 @@
   "module": "dist/index.mjs",
   "coverageDirectory": "coverage",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,ems --dist --minify",
+    "build": "tsup src/index.ts --format cjs,esm --minify",
     "lint": "tsc",
     "test": "jest"
   },
