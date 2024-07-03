@@ -1,5 +1,11 @@
 # @hobadams/nextjs-http-client
 
+## 0.0.6
+
+### Patch Changes
+
+- 0eb9494: npmignore
+
 ## 0.0.5
 
 ### Patch Changes
