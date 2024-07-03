@@ -1,5 +1,7 @@
 # HttpClient
 
+[!WARNING] This is a new package and should not be used in production without heavy testing. [!WARNING]
+
 A TypeScript `HttpClient` class for making HTTP requests with configurable base URL, headers, cache options, and more.
 
 - [Motivation](#motivation)
@@ -20,7 +22,21 @@ A TypeScript `HttpClient` class for making HTTP requests with configurable base 
 
 ## Motivation
 
-TBC
+The primary motivation for creating this fetch wrapper stems from the limitations and challenges associated with using the native fetch API for HTTP requests. While fetch is a powerful tool, it is also quite low-level and requires a significant amount of boilerplate code to handle common tasks and edge cases. This often results in repetitive and error-prone code, particularly when handling complex error scenarios, different response types, and constructing query parameters. Here are some of the key issues that this fetch wrapper aims to address:
+
+- **Boilerplate Code:** Using the native fetch API involves writing a lot of boilerplate code for tasks such as setting up headers, parsing JSON responses, and handling errors. This can be tedious and can lead to inconsistent implementations across different parts of an application.
+
+- **Lack of Type Safety:** The fetch API is not typed, which can lead to runtime errors and makes it difficult to work with in TypeScript projects. This wrapper introduces type safety, helping developers catch errors at compile time and providing better tooling support.
+
+- **Error Handling:** The native fetch API does not throw errors for HTTP status codes in the 4xx or 5xx range, requiring additional code to handle these scenarios. This wrapper provides a more intuitive way to manage HTTP errors, ensuring that they are caught and handled appropriately.
+
+- **Response Type Uncertainty:** With fetch, you often need to determine the response type (e.g., JSON, text, blob) manually. This wrapper abstracts away this complexity by automatically parsing the response based on the content type.
+
+- **Query Parameter Handling:** Constructing URLs with query parameters using fetch can be cumbersome, especially when dealing with complex objects. This wrapper simplifies this process by allowing developers to pass an object of query parameters, which it then converts to a properly formatted query string.
+
+- **Error Response Formats:** Errors returned by APIs can vary in format, sometimes being JSON and other times plain text. This wrapper standardizes error handling, making it easier to parse and manage different error response formats.
+
+By addressing these challenges, this fetch wrapper aims to provide a more streamlined, type-safe, and user-friendly way to perform HTTP requests in JavaScript and TypeScript projects. It simplifies the development process, reduces boilerplate code, and helps ensure that applications are more robust and maintainable.
 
 ## Installation
 
