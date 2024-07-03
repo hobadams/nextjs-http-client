@@ -14,7 +14,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --minify",
+    "build": "tsup src/index.ts --format cjs,esm --minify --dts",
     "release": "pnpm changeset version && pnpm changeset publish --access public",
     "lint": "tsc",
     "test": "jest"
