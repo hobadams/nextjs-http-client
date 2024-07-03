@@ -13,6 +13,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --minify --dts",
     "release": "pnpm changeset version && pnpm changeset publish --access public",
