@@ -11,6 +11,9 @@
     "lint": "tsc",
     "test": "jest"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
