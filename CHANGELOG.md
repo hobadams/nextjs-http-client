@@ -1,5 +1,11 @@
 # @hobadams/nextjs-http-client
 
+## 0.0.7
+
+### Patch Changes
+
+- 2adb5c6: npm
+
 ## 0.0.6
 
 ### Patch Changes
