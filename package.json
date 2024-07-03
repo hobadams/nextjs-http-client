@@ -8,6 +8,7 @@
   "coverageDirectory": "coverage",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --minify",
+    "release": "pnpm changeset version && pnpm changeset publish",
     "lint": "tsc",
     "test": "jest"
   },
