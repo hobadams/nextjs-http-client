@@ -1,8 +1,9 @@
-# HttpClient
+# Next JS Http Client
 
 [!WARNING] This is a new package and should not be used in production without heavy testing. [!WARNING]
 
 A TypeScript `HttpClient` class for making HTTP requests with configurable base URL, headers, cache options, and more.
+This acts as a wrapper around fetch.
 
 - [Motivation](#motivation)
 - [Installation](#installation)
