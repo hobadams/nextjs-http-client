@@ -1,5 +1,11 @@
 # @hobadams/nextjs-http-client
 
+## 0.0.5
+
+### Patch Changes
+
+- 5f9745c: add dist
+
 ## 0.0.4
 
 ### Patch Changes
