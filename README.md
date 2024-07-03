@@ -2,6 +2,7 @@
 
 A TypeScript `HttpClient` class for making HTTP requests with configurable base URL, headers, cache options, and more.
 
+- [Motivation](#motivation)
 - [Installation](#installation)
 - [Usage](#usage)
   - [Creating an Instance](#creating-an-instance)
@@ -17,6 +18,16 @@ A TypeScript `HttpClient` class for making HTTP requests with configurable base 
   - [HttpClient.create(config)](#httpclientcreateconfig)
   - [Methods](#methods)
 
+## Motivation
+
+TBC
+
+## Installation
+
+```sh
+npm install @hobadams/nextjs-http-client
+```
+
 ## Usage
 
 ### Creating an Instance
@@ -24,7 +35,7 @@ A TypeScript `HttpClient` class for making HTTP requests with configurable base 
 To create an instance of `HttpClient`, use the `create` method with a configuration object:
 
 ```typescript
-import { HttpClient } from './HttpClient';
+import {HttpClient} from './HttpClient'
 
 const apiClient = HttpClient.create({
   baseUrl: 'https://api.example.com',
@@ -33,7 +44,7 @@ const apiClient = HttpClient.create({
     'Custom-Header': 'CustomValue',
   },
   cache: 'no-store',
-});
+})
 ```
 
 ### Making GET Requests
@@ -43,12 +54,12 @@ You can make a GET request with query parameters, headers, and cache options:
 ```typescript
 apiClient
   .get('/endpoint', {
-    params: { key: 'value', anotherKey: 'anotherValue' },
-    headers: { 'Another-Header': 'AnotherValue' },
+    params: {key: 'value', anotherKey: 'anotherValue'},
+    headers: {'Another-Header': 'AnotherValue'},
     cache: 'force-cache',
   })
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+  .then((response) => console.log(response))
+  .catch((error) => console.error(error))
 ```
 
 ### Making POST Requests
@@ -58,12 +69,12 @@ You can make a POST request with a JSON body, headers, and cache options:
 ```typescript
 apiClient
   .post('/endpoint', {
-    body: { key: 'value' },
-    headers: { 'Another-Header': 'AnotherValue' },
+    body: {key: 'value'},
+    headers: {'Another-Header': 'AnotherValue'},
     cache: 'reload',
   })
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+  .then((response) => console.log(response))
+  .catch((error) => console.error(error))
 ```
 
 ### Making PUT Requests
@@ -73,12 +84,12 @@ You can make a PUT request with a JSON body, headers, and cache options:
 ```typescript
 apiClient
   .put('/endpoint', {
-    body: { key: 'value' },
-    headers: { 'Another-Header': 'AnotherValue' },
+    body: {key: 'value'},
+    headers: {'Another-Header': 'AnotherValue'},
     cache: 'no-cache',
   })
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+  .then((response) => console.log(response))
+  .catch((error) => console.error(error))
 ```
 
 ### Making PATCH Requests
@@ -88,12 +99,12 @@ You can make a PATCH request with a JSON body, headers, and cache options:
 ```typescript
 apiClient
   .patch('/endpoint', {
-    body: { key: 'value' },
-    headers: { 'Another-Header': 'AnotherValue' },
+    body: {key: 'value'},
+    headers: {'Another-Header': 'AnotherValue'},
     cache: 'no-cache',
   })
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+  .then((response) => console.log(response))
+  .catch((error) => console.error(error))
 ```
 
 ### Making DELETE Requests
@@ -103,12 +114,12 @@ You can make a DELETE request with query parameters, headers, and cache options:
 ```typescript
 apiClient
   .delete('/endpoint', {
-    params: { key: 'value' },
-    headers: { 'Another-Header': 'AnotherValue' },
+    params: {key: 'value'},
+    headers: {'Another-Header': 'AnotherValue'},
     cache: 'reload',
   })
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+  .then((response) => console.log(response))
+  .catch((error) => console.error(error))
 ```
 
 ### Handling Errors
@@ -118,8 +129,8 @@ Errors are thrown when the response status is not in the range 200-299. You can 
 ```typescript
 apiClient
   .get('/non-existent-endpoint')
-  .then(response => console.log(response))
-  .catch(error => console.error(error.message));
+  .then((response) => console.log(response))
+  .catch((error) => console.error(error.message))
 ```
 
 ## Logger
@@ -131,19 +142,19 @@ The HttpClient class allows for custom logging of errors through the logger prop
 To implement a custom logger, create a class that implements the Logger interface and override the log method:
 
 ```typescript
-import { Logger } from './HttpClient';
+import {Logger} from './HttpClient'
 
 class CustomLogger implements Logger {
   log(message: string): void {
     // Custom logging logic
-    console.log('Custom log:', message);
+    console.log('Custom log:', message)
   }
 }
 
 const apiClient = HttpClient.create({
   baseUrl: 'https://api.example.com',
   logger: new CustomLogger(),
-});
+})
 ```
 
 ## API
