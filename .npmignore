@@ -1,5 +1,9 @@
-# Ignore everything
-*
-
-# But not these files...
-!dist/
+babel.config.js
+jest.config.js
+tsconfig.json
+.gitignore
+.git
+.github
+test
+src
+node_modules
