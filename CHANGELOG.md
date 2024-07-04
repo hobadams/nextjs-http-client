@@ -1,5 +1,11 @@
 # @hobadams/nextjs-http-client
 
+## 0.0.9
+
+### Patch Changes
+
+- d77a3d2: update publish
+
 ## 0.0.8
 
 ### Patch Changes
